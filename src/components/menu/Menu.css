@@ -1,3 +1,7 @@
 .menuIcon{
     color: #FF2231;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
 }
