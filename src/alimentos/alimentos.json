@@ -1,0 +1,44 @@
+[
+    {
+        "id":1,
+        "nome": "Arroz",
+        "carboidrato": 0.44,
+        "proteina": 0.043,
+        "calorias": 205.5
+    },
+    {
+        "id": 2,
+        "nome": "Feijão",
+        "carboidrato": 0.136,
+        "proteina": 0.048,
+        "calorias": 0.77
+    },
+    {
+        "id": 3,
+        "nome": "Frango grelhado",
+        "carboidrato": 0,
+        "proteina": 0.32,
+        "calorias": 1.65
+    },
+    {
+        "id": 4,
+        "nome": "Batata doce",
+        "carboidrato": 0.201,
+        "proteina": 0.016,
+        "calorias": 0.86
+    },
+    {
+        "id": 5,
+        "nome": "Ovo cozido",
+        "carboidrato": 0.006,
+        "proteina": 0.063,
+        "calorias": 0.78
+    },
+    {
+        "id": 6,
+        "nome": "Banana",
+        "carboidrato": 0.27,
+        "proteina": 0.013,
+        "calorias": 1.05
+    }
+]

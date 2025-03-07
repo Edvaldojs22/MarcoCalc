@@ -60,18 +60,15 @@ h1 {
 
 .fromularioComidaVolume {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    width: 300px;
+    margin: 0 auto;
 }
 
-.fromularioComidaVolume div {
-    position: relative;
-    
-}
 
 .fromularioComidaVolume label {
     position: absolute;
     bottom: 38px;
-    
 }
 
 #food, #volume{
@@ -90,6 +87,34 @@ h1 {
 
 }
 
+.painelIpuntoFood{
+    position: relative;
+}
+.painelSugestao{
+    position: absolute;
+    width: 200px;
+    height: 140px;
+    bottom: 60px;
+    left: 50px;
+    background-color: white;
+    border-radius: 10px;
+    display: none;
+}
+.painelIpuntVolume{
+    position: relative;
+}
+
+.painelIpuntVolume select{
+    position: absolute;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    text-align: center;
+    right: 8px;
+}
+
 
 .fromularioComidaVolume button{
     border: none;
@@ -99,6 +124,20 @@ h1 {
     font-size: 35px;
     background-color: #FF2231;
     border-radius: 50%;
+}
+
+.listaAlimentos{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 300px;  
+    height: 100px;  
+    margin: 35px auto;
+}
+
+.listaAlimentos li{
+    list-style-type: none;
 }
 
 .iconReload{
