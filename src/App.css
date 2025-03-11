@@ -4,174 +4,58 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  
+    color: white;
     font-family: "Genos", sans-serif;
 }
 
 .app {
+    position: relative;
+    height: 100vh;
     width: 100%;
     max-width: 500px;
-    height: 100vh;
-    max-height: 800px;
-    margin: auto;
-    background-color: rgb(0, 0, 0);
-    position: relative;
-    color: white;
+    background-image: url('./assets/painelFundo.jpg');
+    background-size: contain;
+    padding-top: 80px;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
+.barraApp {
+    width: 100%;
+    height: 30px;
+    background-color: #970000;
+    position: absolute;
 }
 
-.caixaImg {
+.cima {
+    top: 0;
+}
+
+.baixo {
+    bottom: 0;
+}
+
+.painelInformaçoesMacros {
     width: 100%;
     display: flex;
-    justify-content: center;
-    margin: 20px 0;
-    
-
-}
-
-.iconLobo {
-    width: 140px;
-    height: 140px;
-}
-
-.painelValorNutricinal {
-    display: flex;
-    justify-content: space-around;
-}
-
-.bolasValores {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background-color: #FF2231;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    margin-bottom: 20px;
-}
-
-.descricaoNutricional {
-    position: absolute;
-    top: 75px;
-}
-
-h1 {
-    font-size: 20px;
-    margin: 30px 0 30px 0;
-    text-align: center;
-}
-
-.fromularioComidaVolume {
-    display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.painelMacros{
+    width: 100%;
+    display: flex;
     justify-content: space-between;
+    padding: 0 20px 0;
+}
+
+.ciculoAlimento {
+    width: 150px;
     height: 150px;
-    margin: 0 auto;
-}
-
-
-
-#food,
-#volume {
-    border: solid 2px red;
-    border-radius: 10px;
-    height: 30px;
-    margin-bottom: 10px;
-    color: black;
-    text-align: center;
-}
-
-#food {
-    width: 100px;
+    border-radius: 50%;
+    background-color: #351414;
+    backdrop-filter: blur(50px);
+    box-shadow: 0 0 30px #970000;
+    border: solid 5px #970000;
+    backdrop-filter: blur(10px);
 
 }
 
-#volume {
-    width: 50px;
-    color: black;
-
-}
-
-.painelIpuntoFood,
-.painelIpuntVolume {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-
-.painelSugestao {
-    position: absolute;
-    width: 200px;
-    height: 140px;
-    bottom: 60px;
-    left: 50px;
-    background-color: white;
-    border-radius: 10px;
-    display: none;
-}
-
-.painelIpuntVolume {
-    position: relative;
-}
-
-.painelIpuntVolume select {
-    width: 30px;
-    height: 30px;
-    border-radius: 10px;
-    border: solid 2px red;
-    -webkit-appearance: none;
-    text-align: center;
-    color: black;
-    position: absolute;
-    right: -35px;
-    bottom: 10px;
-    font-size: 15px;
-    font-weight: 500;
-
-}
-
-.botaoAdicionar{
-    width: 80px;
-    height: 40px;
-    background-color: #FF2231;
-    font-size: 15px;
-    border: none;
-    border-radius: 10px;
-    font-weight: 300;
-}
-
-.listaAlimentos {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 10px;
-    width: 350px;
-    height: 120px;
-    margin: 35px auto;
-
-}
-
-.listaAlimentos li {
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-}
-.iconCheck{
-   color: #FF2231;
-   margin-left: 10px;
-   
-}
-.iconReload {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    font-size: 30px;
-    color: #FF2231;
-}

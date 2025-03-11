@@ -1,5 +1,5 @@
 import './app.css'
-import iconLobo from '../src/assets/lobo.png';
+
 import Menu from './components/menu/Menu'
 import { SlReload } from "react-icons/sl";
 import { useState, useEffect } from 'react';
@@ -25,7 +25,7 @@ function App() {
   const buscaAlimento = (event) => {
     event.preventDefault();
 
-    if(!alimento.trim()){
+    if (!alimento.trim()) {
       alert("Por favor, preencha todos os campos antes de adicionar.");
       return;
     }
@@ -43,7 +43,7 @@ function App() {
 
       }
     }
- 
+
   }
 
   // Responsavel por fazer a somas dos nutrientes dos alimentos
@@ -63,86 +63,84 @@ function App() {
 
   return (
     <div className='app'>
-      <Menu />
+      <div className='barraApp cima'>
+
+      </div>
+      <div className='barraApp baixo'>
+      </div>
+
       <main>
-        <div className='caixaImg'>
-          <img src={iconLobo} alt="lobo" className='iconLobo' />
-        </div>
 
+        <section className='painelInformaçoesMacros'>
+          <h1>Customize Your Dish</h1>
 
-
-
-        <section className='painelValorNutricinal'>
-
-          <div className='bolasValores'>
-            <p>{(carbo * quantidade).toFixed(2)}g</p>
-            <p className='descricaoNutricional'>Carbo</p>
-          </div>
-
-          <div className='bolasValores'>
-            <p>{(caloria * quantidade).toFixed(2)}g</p>
-            <p className='descricaoNutricional'>Kcal</p>
-          </div>
-
-          <div className='bolasValores'>
-            <p>{(proteina * quantidade).toFixed(2)}g</p>
-            <p className='descricaoNutricional'>Protein</p>
-
-          </div>
-        </section>
-
-        <h1>Customize Your Dish</h1>
-
-
-        <section className='painelComidas'>
-          <form className='fromularioComidaVolume' action="">
-            <div className='painelIpuntoFood'>
-              <div className='painelSugestao'>
-
+          
+            <div className='painelMacros'>
+              <div> <p>{(carbo * quantidade).toFixed(2)}g</p>
+                <p className='descricaoNutricional'>Carbo</p>
               </div>
-              <label htmlFor="campoFood">Comida</label>
-              <input
-                id="food"
-                type="text"
-                value={alimento}
-                onChange={(e) => setAlimento(e.target.value)}
-                required />
+              <div>
+                <p>{(caloria * quantidade).toFixed(2)}g</p>
+                <p className='descricaoNutricional'>Kcal</p>
+              </div>
             </div>
-            <div className='painelIpuntVolume'>
-              <label htmlFor="campoVolume">medida</label>
-              <input
-                type="text"
-                name=""
-                id="volume"
-                value={quantidade}
-                onChange={(e) => {
-                  setQuantidade(e.target.value);
-                }}
-                required />
 
-              <select id="unidade" name="unidade">
-                <option value="g">g</option>
-                <option value="ml">ml</option>
-              </select>
+            <div className='ciculoAlimento'>
 
             </div>
-            <button onClick={buscaAlimento} className='botaoAdicionar'>Adicionar</button>
 
-          </form>
-           <ul className='listaAlimentos'>
-            {listaAlimentos.map((a, index) =>(
-              <li key={index}>{a.nome} {quantidade}g<FaCheck className='iconCheck'/></li>
-            ))}
-
-          </ul> 
-
-
+            <div className='painelMacros'>
+              <div>
+                <p>{(proteina * quantidade).toFixed(2)}g</p>
+                <p className='descricaoNutricional'>Protein</p>
+              </div>
+              <div>
+                <p>{(proteina * quantidade).toFixed(2)}g</p>
+                <p className='descricaoNutricional'>Gordura</p>
+              </div>
+            </div>
+         
         </section>
 
 
-        < SlReload className='iconReload' />
+        <label htmlFor="campoFood">Comida</label>
+        <input
+          id="food"
+          type="text"
+          value={alimento}
+          onChange={(e) => setAlimento(e.target.value)}
+          required />
+
+        <label htmlFor="campoVolume">medida</label>
+        <input
+          type="text"
+          name=""
+          id="volume"
+          value={quantidade}
+          onChange={(e) => {
+            setQuantidade(e.target.value);
+          }}
+          required />
+
+        <select id="unidade" name="unidade">
+          <option value="g">g</option>
+          <option value="ml">ml</option>
+        </select>
+
+
+        <button onClick={buscaAlimento} className='botaoAdicionar'>Adicionar</button>
+
+        <ul className='listaAlimentos'>
+          {listaAlimentos.map((a, index) => (
+            <li key={index}>{a.nome} {quantidade}g<FaCheck className='iconCheck' /></li>
+          ))}
+        </ul>
 
       </main>
+
+
+
+
 
     </div>
   )
