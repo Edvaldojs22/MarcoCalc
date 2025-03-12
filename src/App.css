@@ -15,7 +15,8 @@
     max-width: 500px;
     background-image: url('./assets/painelFundo.jpg');
     background-size: contain;
-    padding-top: 80px;
+    padding-top: 50px;
+    margin: 0 auto;
 }
 
 .barraApp {
@@ -33,6 +34,10 @@
     bottom: 0;
 }
 
+h1 {
+    margin-bottom: 40px;
+}
+
 .painelInformaçoesMacros {
     width: 100%;
     display: flex;
@@ -40,22 +45,68 @@
     align-items: center;
 }
 
-.painelMacros{
+.painelMacros {
     width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 0 20px 0;
 }
 
+.painelInformaçoesMacros .caixaMacros {
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #351414;
+    border: solid 3px #970000;
+    box-shadow: 0 0 30px #970000;
+    font-size: 20px;
+}
+
+.caixaMacros p:nth-child(2) {
+    position: absolute;
+    bottom: -24px;
+    font-size: 17px;
+}
+
 .ciculoAlimento {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
     border-radius: 50%;
     background-color: #351414;
     backdrop-filter: blur(50px);
     box-shadow: 0 0 30px #970000;
     border: solid 5px #970000;
     backdrop-filter: blur(10px);
-
 }
 
+
+.painelOpcoes {
+   display: none;
+}
+
+
+
+ ul {
+    width: 300px;
+    height: 130px;
+    border: solid 5px #970000;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #970000;
+    margin: 60px auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}

@@ -74,67 +74,76 @@ function App() {
         <section className='painelInformaçoesMacros'>
           <h1>Customize Your Dish</h1>
 
-          
-            <div className='painelMacros'>
-              <div> <p>{(carbo * quantidade).toFixed(2)}g</p>
-                <p className='descricaoNutricional'>Carbo</p>
-              </div>
-              <div>
-                <p>{(caloria * quantidade).toFixed(2)}g</p>
-                <p className='descricaoNutricional'>Kcal</p>
-              </div>
-            </div>
 
-            <div className='ciculoAlimento'>
-
+          <div className='painelMacros'>
+            <div className='caixaMacros'>
+              <p>{(carbo * quantidade).toFixed(1)}g</p>
+              <p className='descricaoNutricional'>Carbo</p>
             </div>
-
-            <div className='painelMacros'>
-              <div>
-                <p>{(proteina * quantidade).toFixed(2)}g</p>
-                <p className='descricaoNutricional'>Protein</p>
-              </div>
-              <div>
-                <p>{(proteina * quantidade).toFixed(2)}g</p>
-                <p className='descricaoNutricional'>Gordura</p>
-              </div>
+            <div className='caixaMacros'>
+              <p>{(caloria * quantidade).toFixed(1)}g</p>
+              <p className='descricaoNutricional'>Caloria</p>
             </div>
-         
+          </div>
+
+          <div className='ciculoAlimento'>
+
+          </div>
+
+          <div className='painelMacros'>
+            <div className='caixaMacros'>
+              <p>{(proteina * quantidade).toFixed(1)}g</p>
+              <p className='descricaoNutricional'>Proteina</p>
+            </div>
+            <div className='caixaMacros'>
+              <p>{(proteina * quantidade).toFixed(1)}g</p>
+              <p className='descricaoNutricional'>Gordura</p>
+            </div>
+          </div>
+
         </section>
 
 
-        <label htmlFor="campoFood">Comida</label>
-        <input
-          id="food"
-          type="text"
-          value={alimento}
-          onChange={(e) => setAlimento(e.target.value)}
-          required />
+        <section className='painelOpcoes'>
+          <label htmlFor="campoFood">Comida</label>
+          <input
+            id="food"
+            type="text"
+            value={alimento}
+            onChange={(e) => setAlimento(e.target.value)}
+            required />
 
-        <label htmlFor="campoVolume">medida</label>
-        <input
-          type="text"
-          name=""
-          id="volume"
-          value={quantidade}
-          onChange={(e) => {
-            setQuantidade(e.target.value);
-          }}
-          required />
+          <label htmlFor="campoVolume">medida</label>
+          <input
+            type="text"
+            name=""
+            id="volume"
+            value={quantidade}
+            onChange={(e) => {
+              setQuantidade(e.target.value);
+            }}
+            required />
 
-        <select id="unidade" name="unidade">
-          <option value="g">g</option>
-          <option value="ml">ml</option>
-        </select>
+          <select id="unidade" name="unidade">
+            <option value="g">g</option>
+            <option value="ml">ml</option>
+          </select>
 
 
-        <button onClick={buscaAlimento} className='botaoAdicionar'>Adicionar</button>
+          <button onClick={buscaAlimento} className='botaoAdicionar'>Adicionar</button>
 
-        <ul className='listaAlimentos'>
-          {listaAlimentos.map((a, index) => (
-            <li key={index}>{a.nome} {quantidade}g<FaCheck className='iconCheck' /></li>
-          ))}
-        </ul>
+        </section>
+
+        
+
+        
+          <ul >
+            {listaAlimentos.map((a, index) => (
+              <li key={index}>{a.nome} {quantidade}g<FaCheck className='iconCheck' /></li>
+            ))}
+          </ul>
+        
+
 
       </main>
 
