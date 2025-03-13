@@ -1,7 +1,5 @@
 import './app.css'
-
-import Menu from './components/menu/Menu'
-import { SlReload } from "react-icons/sl";
+import { MdClose } from "react-icons/md";
 import { useState, useEffect } from 'react';
 import alimentos from "./alimentos/alimentos.json";
 import { FaCheck } from "react-icons/fa";
@@ -9,15 +7,22 @@ import { FaCheck } from "react-icons/fa";
 
 function App() {
 
+
+  //Variável responsavel por manipular a tela Add alimento
+  const [visivel, setVisivel] = useState(false);
+
+  console.log(visivel)
+  //---
+
+  //Variáveis para exibição
   const [carbo, setCarbo] = useState(0);
   const [proteina, setProteina] = useState(0);
   const [caloria, setCaloria] = useState(0);
+  //---
 
-  const [quantidade, setQuantidade] = useState(1);
-
+  const [quantidade, setQuantidade] = useState(0); //Usanda para calcular os macros totais
 
   const [listaAlimentos, setListaAlimento] = useState([]);
-
   const [alimento, setAlimento] = useState("");
 
 
@@ -51,8 +56,6 @@ function App() {
     const totalCarbo = listaAlimentos.reduce((acc, item) => acc + item.carboidrato, 0);
     const totalProteina = listaAlimentos.reduce((acc, item) => acc + item.proteina, 0);
     const totalCaloria = listaAlimentos.reduce((acc, item) => acc + item.calorias, 0);
-
-
     setCarbo(totalCarbo);
     setProteina(totalProteina);
     setCaloria(totalCaloria);
@@ -69,7 +72,7 @@ function App() {
       <div className='barraApp baixo'>
       </div>
 
-      <main>
+      <main style={{filter: visivel ? "blur(6px)" :"none"  }} >
 
         <section className='painelInformaçoesMacros'>
           <h1>Customize Your Dish</h1>
@@ -104,7 +107,20 @@ function App() {
         </section>
 
 
-        <section className='painelOpcoes'>
+        <ul >
+          {listaAlimentos.map((a, index) => (
+            <li key={index}>{a.nome} {quantidade}g<FaCheck className='iconCheck' /></li>
+          ))}
+        </ul>
+
+        <button onClick={() => setVisivel(true)} className='botaoAdd'>
+          Adicionar
+        </button>
+
+      </main>
+
+      <section style={{ display: visivel ? "block" : "none" }} className='painelOpcoes'>
+        <div>
           <label htmlFor="campoFood">Comida</label>
           <input
             id="food"
@@ -112,7 +128,9 @@ function App() {
             value={alimento}
             onChange={(e) => setAlimento(e.target.value)}
             required />
+        </div>
 
+        <div>
           <label htmlFor="campoVolume">medida</label>
           <input
             type="text"
@@ -128,24 +146,16 @@ function App() {
             <option value="g">g</option>
             <option value="ml">ml</option>
           </select>
+        </div>
 
 
-          <button onClick={buscaAlimento} className='botaoAdicionar'>Adicionar</button>
 
-        </section>
+        <button onClick={buscaAlimento} className='botaoAdicionar'>Confirmar</button>
 
-        
+        <MdClose onClick={() => setVisivel(false)} className='iconsClose' />
 
-        
-          <ul >
-            {listaAlimentos.map((a, index) => (
-              <li key={index}>{a.nome} {quantidade}g<FaCheck className='iconCheck' /></li>
-            ))}
-          </ul>
-        
+      </section>
 
-
-      </main>
 
 
 
