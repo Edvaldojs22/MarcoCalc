@@ -7,9 +7,14 @@ import { FaCheck } from "react-icons/fa";
 
 function App() {
 
+  const imagens = {
+    
+  }
+
 
   //Variável responsavel por manipular a tela Add alimento
   const [visivel, setVisivel] = useState(false);
+  const [infos, setInfos] = useState(false);
 
   console.log(visivel)
   //---
@@ -72,18 +77,18 @@ function App() {
       <div className='barraApp baixo'>
       </div>
 
-      <main style={{filter: visivel ? "blur(6px)" :"none"  }} >
+      <main style={{ filter: visivel ? "blur(6px)" : "none" }} >
 
-        <section className='painelInformaçoesMacros'>
+        <section style={{ marginTop: infos ? "0px" : "100px" }} className='painelInformaçoesMacros'>
           <h1>Customize Your Dish</h1>
 
 
           <div className='painelMacros'>
-            <div className='caixaMacros'>
-              <p>{(carbo * quantidade).toFixed(1)}g</p>
-              <p className='descricaoNutricional'>Carbo</p>
+            <div style={{ display: infos ? "block" : "none" }} className='caixaMacros'>
+              <p style={{ display: infos ? "block" : "none" }}>{(carbo * quantidade).toFixed(1)}g</p>
+              <p style={{ display: infos ? "block" : "none" }} className='descricaoNutricional'>Carbo</p>
             </div>
-            <div className='caixaMacros'>
+            <div style={{ display: infos ? "block" : "none" }} className='caixaMacros'>
               <p>{(caloria * quantidade).toFixed(1)}g</p>
               <p className='descricaoNutricional'>Caloria</p>
             </div>
@@ -94,11 +99,11 @@ function App() {
           </div>
 
           <div className='painelMacros'>
-            <div className='caixaMacros'>
+            <div style={{ display: infos ? "block" : "none" }} className='caixaMacros'>
               <p>{(proteina * quantidade).toFixed(1)}g</p>
               <p className='descricaoNutricional'>Proteina</p>
             </div>
-            <div className='caixaMacros'>
+            <div style={{ display: infos ? "block" : "none" }} className='caixaMacros'>
               <p>{(proteina * quantidade).toFixed(1)}g</p>
               <p className='descricaoNutricional'>Gordura</p>
             </div>
@@ -107,7 +112,7 @@ function App() {
         </section>
 
 
-        <ul >
+        <ul style={{ display: infos ? "block" : "none" }} >
           {listaAlimentos.map((a, index) => (
             <li key={index}>{a.nome} {quantidade}g<FaCheck className='iconCheck' /></li>
           ))}
@@ -152,7 +157,7 @@ function App() {
 
         <button onClick={buscaAlimento} className='botaoAdicionar'>Confirmar</button>
 
-        <MdClose onClick={() => setVisivel(false)} className='iconsClose' />
+        <MdClose onClick={() => { setVisivel(false); setInfos(true) }} className='iconsClose' />
 
       </section>
 
