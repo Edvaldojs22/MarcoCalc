@@ -8,7 +8,7 @@ import { FaCheck } from "react-icons/fa";
 function App() {
 
   const imagens = {
-    
+
   }
 
 
@@ -78,36 +78,36 @@ function App() {
       </div>
 
       <main style={{ filter: visivel ? "blur(6px)" : "none" }} >
+        <h1 style={{ marginBottom: infos ? "100" : "40px"}}>Customize Your Dish</h1>
+        <section style={{ marginTop: infos ? "0px" : "30px" }} className='painelInformaçoesMacros'>
 
-        <section style={{ marginTop: infos ? "0px" : "100px" }} className='painelInformaçoesMacros'>
-          <h1>Customize Your Dish</h1>
 
-
-          <div className='painelMacros'>
-            <div style={{ display: infos ? "block" : "none" }} className='caixaMacros'>
-              <p style={{ display: infos ? "block" : "none" }}>{(carbo * quantidade).toFixed(1)}g</p>
-              <p style={{ display: infos ? "block" : "none" }} className='descricaoNutricional'>Carbo</p>
+          <div style={{ width: infos ? "100%" : "200px", height: infos ? "300px" : "100px", gap: infos ? "100px" : "0", opacity: infos ? "1" : "0" }} className='caixaInfos'>
+            <div className='caixaMacros'>
+              <p >{(carbo * quantidade).toFixed(1)}g</p>
+              <p className='descricaoNutricional'>Carbo</p>
             </div>
-            <div style={{ display: infos ? "block" : "none" }} className='caixaMacros'>
+            <div className='caixaMacros'>
               <p>{(caloria * quantidade).toFixed(1)}g</p>
               <p className='descricaoNutricional'>Caloria</p>
             </div>
+
+            <div className='caixaMacros'>
+              <p>{(proteina * quantidade).toFixed(1)}g</p>
+              <p className='descricaoNutricional'>Proteina</p>
+            </div>
+            <div className='caixaMacros'>
+              <p>{(proteina * quantidade).toFixed(1)}g</p>
+              <p className='descricaoNutricional'>Gordura</p>
+            </div>
           </div>
+
+
 
           <div className='ciculoAlimento'>
 
           </div>
 
-          <div className='painelMacros'>
-            <div style={{ display: infos ? "block" : "none" }} className='caixaMacros'>
-              <p>{(proteina * quantidade).toFixed(1)}g</p>
-              <p className='descricaoNutricional'>Proteina</p>
-            </div>
-            <div style={{ display: infos ? "block" : "none" }} className='caixaMacros'>
-              <p>{(proteina * quantidade).toFixed(1)}g</p>
-              <p className='descricaoNutricional'>Gordura</p>
-            </div>
-          </div>
 
         </section>
 

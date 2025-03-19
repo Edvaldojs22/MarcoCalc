@@ -15,9 +15,10 @@
     background-image: url('./assets/painelFundo.jpg');
     background-size: contain;
     padding-top: 50px;
-    margin: 0 auto;
     color: white;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .barraApp {
@@ -35,35 +36,53 @@
     bottom: 0;
 }
 
+
+
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
     filter: blur(20px);
+    margin-top: 30px;
 }
 
-h1 {
-    margin-bottom: 40px;
-}
+
 
 .painelInformaçoesMacros {
-    width: 100%;
+    width: 450px;
+    height: 200px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    
+}
+
+.caixaInfos{
+    width: 300px;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    align-items: center;
+    transition: all 1s;
+    gap: 100px;
 }
 
 
 
-.painelMacros {
+/* .painelMacros {
     width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 0 20px 0;
-}
+
+} */
 
 .painelInformaçoesMacros .caixaMacros {
-    width: 80px;
+    width: 70px;
     height: 40px;
     border-radius: 10px;
     display: flex;
@@ -83,14 +102,19 @@ h1 {
 }
 
 .ciculoAlimento {
-    width: 170px;
-    height: 170px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 190px;
+    height: 190px;
     border-radius: 50%;
     background-color: #351414;
     backdrop-filter: blur(50px);
     box-shadow: 0 0 30px #970000;
     border: solid 5px #970000;
     backdrop-filter: blur(10px);
+    z-index: 1;
 }
 
 
@@ -194,12 +218,12 @@ ul {
     border: solid 5px #970000;
     border-radius: 10px;
     box-shadow: 0 0 30px #970000;
-    margin: 60px auto 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    margin-top: 50px;
     gap: 8px;
 }
 
