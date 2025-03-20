@@ -1,22 +1,36 @@
 import './app.css'
 import { MdClose } from "react-icons/md";
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { FaAppleWhole } from "react-icons/fa6";
+import { GiChickenLeg } from "react-icons/gi";
+import { FaFish } from "react-icons/fa";
+import { LuBeef } from "react-icons/lu";
+import { MdOutlineEgg } from "react-icons/md";
+import { GiCoffeeBeans } from "react-icons/gi";
 import alimentos from "./alimentos/alimentos.json";
 import { FaCheck } from "react-icons/fa";
 
 
 function App() {
 
-  const imagens = {
+  //Fução para aparecer alimentos a cada 5 segundos
+  const imagens = [FaAppleWhole, GiChickenLeg, FaFish,LuBeef,MdOutlineEgg,GiCoffeeBeans];
+  const [imagemIndex, setImagemIndex] = useState(0);
+  useEffect(() => {
+    const intervalo = setInterval(() => {
+      setImagemIndex((prevIndex) => (prevIndex + 1) % imagens.length);
+    }, 5000);
 
-  }
+    return () => clearInterval(intervalo)
+  }) 
+
+  //---
+
 
 
   //Variável responsavel por manipular a tela Add alimento
   const [visivel, setVisivel] = useState(false);
   const [infos, setInfos] = useState(false);
-
-  console.log(visivel)
   //---
 
   //Variáveis para exibição
@@ -78,7 +92,7 @@ function App() {
       </div>
 
       <main style={{ filter: visivel ? "blur(6px)" : "none" }} >
-        <h1 style={{ marginBottom: infos ? "100" : "40px"}}>Customize Your Dish</h1>
+        <h1 style={{ marginBottom: infos ? "100" : "40px" }}>Customize Your Dish</h1>
         <section style={{ marginTop: infos ? "0px" : "30px" }} className='painelInformaçoesMacros'>
 
 
@@ -105,7 +119,9 @@ function App() {
 
 
           <div className='ciculoAlimento'>
-
+            <div className='iconsIMG' key={imagemIndex}>
+              {React.createElement(imagens[imagemIndex])}
+            </div>
           </div>
 
 
