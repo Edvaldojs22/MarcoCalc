@@ -12,13 +12,16 @@
     height: 100vh;
     width: 100%;
     max-width: 500px;
-    background-image: url('./assets/painelFundo.jpg');
-    background-size: contain;
+    background: linear-gradient(to bottom right, #000000 50%, #a30101 50%);
     padding-top: 50px;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+h1 {
+    color: #ffffff;
 }
 
 .barraApp {
@@ -71,16 +74,6 @@ main {
     gap: 100px;
 }
 
-
-
-/* .painelMacros {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px 0;
-
-} */
-
 .painelInformaçoesMacros .caixaMacros {
     width: 70px;
     height: 40px;
@@ -109,14 +102,14 @@ main {
     width: 190px;
     height: 190px;
     border-radius: 50%;
-    background-color: #351414;
+    background-color: #000000;
     backdrop-filter: blur(50px);
-    box-shadow: 0 0 30px #970000;
-    border: solid 5px #970000;
+    box-shadow: 0 0 30px #ff0000;
+    border: solid 3px #9c0303;
     backdrop-filter: blur(10px);
     z-index: 1;
     overflow: hidden;
-   
+
 }
 
 .iconsIMG {
@@ -126,7 +119,7 @@ main {
     top: 30px;
     transform: translate(-50%);
     animation: aparecerIMG 1s linear;
-    color: #90010B;
+    color: #ffffff;
 }
 
 @keyframes aparecerIMG {
@@ -135,7 +128,7 @@ main {
     }
 
     100% {
-       top: 30px;
+        top: 30px;
     }
 }
 
@@ -162,8 +155,6 @@ main {
         top: 50%
     }
 }
-
-
 
 
 .painelOpcoes div {
@@ -235,26 +226,31 @@ main {
 
 ul {
     min-width: 250px;
-    height: 130px;
-    border: solid 5px #970000;
-    border-radius: 10px;
+    background-color: #000000;
+    min-height: 150px;
+    max-height: 250px;
+    border: solid 3px #970000;
+    border-radius: 5px;
     box-shadow: 0 0 30px #970000;
+    column-count: 2;
+    margin-top: 50px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    margin-top: 50px;
-    gap: 8px;
+    padding-top: 10px;
 }
 
 li {
     list-style-type: none;
     display: flex;
     align-items: center;
+    justify-content: center;
+
 }
 
 .botaoAdd {
+    font-size: 20px;
+    font-weight: 600;
     width: 80px;
     height: 35px;
     border-radius: 10px;

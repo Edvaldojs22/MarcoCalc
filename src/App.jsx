@@ -85,11 +85,7 @@ function App() {
 
   return (
     <div className='app'>
-      <div className='barraApp cima'>
-
-      </div>
-      <div className='barraApp baixo'>
-      </div>
+      
 
       <main style={{ filter: visivel ? "blur(6px)" : "none" }} >
         <h1 style={{ marginBottom: infos ? "100" : "40px" }}>Customize Your Dish</h1>
@@ -135,7 +131,7 @@ function App() {
         </ul>
 
         <button onClick={() => setVisivel(true)} className='botaoAdd'>
-          Adicionar
+          ADD
         </button>
 
       </main>
@@ -171,7 +167,7 @@ function App() {
 
 
 
-        <button onClick={buscaAlimento} className='botaoAdicionar'>Confirmar</button>
+        <button onClick={buscaAlimento} className='botaoAdicionar'>Confirm</button>
 
         <MdClose onClick={() => { setVisivel(false); setInfos(true) }} className='iconsClose' />
 
