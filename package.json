@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "homepage": "https://Edvaldojs22.github.io/MacroPessoal",
-=======
   "homepage": "https://Edvaldojs22.github.io/MacroCal",
->>>>>>> 8d80422ef006d2198dff5c1c14416ed414964e99
   "name": "macro-calc",
   "private": true,
   "version": "0.0.0",
