@@ -1,5 +1,5 @@
 {
-  "homepage": "https://Edvaldojs22.github.io/MacroPessoal",
+  "homepage": "https://edvaldojs22.github.io/MacroPessoal",
   "name": "macro-calc",
   "private": true,
   "version": "0.0.0",
@@ -9,7 +9,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm rum build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
