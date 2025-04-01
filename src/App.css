@@ -170,8 +170,9 @@ main {
 
 .painelOpcoes input {
     border-radius: 5px;
-    height: 25px;
+    height: 30px;
     border: none;
+    margin-top: 5px;
 }
 
 #food {
@@ -208,11 +209,12 @@ main {
     height: 35px;
     border-radius: 10px;
     border: none;
-    background-image: linear-gradient(to bottom, #F60112, #90010B 62%);
     margin-top: 25px;
-    color: rgb(255, 255, 255);
     cursor: pointer;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
 
 .iconsClose {
@@ -250,13 +252,16 @@ li {
 
 .botaoAdd {
     font-size: 20px;
-    font-weight: 600;
-    width: 80px;
-    height: 35px;
+    width: 120px;
+    height: 40px;
     border-radius: 10px;
     border: solid 2px #970000;
     background-image: linear-gradient(to bottom, #F60112, #90010B 62%);
     margin-top: 25px;
     color: rgb(255, 255, 255);
     cursor: pointer;
+}
+
+.iconCheck{
+    font-size: 19px;
 }

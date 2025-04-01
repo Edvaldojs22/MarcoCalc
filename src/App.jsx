@@ -14,7 +14,7 @@ import { FaCheck } from "react-icons/fa";
 function App() {
 
   //Fução para aparecer alimentos a cada 5 segundos
-  const imagens = [FaAppleWhole, GiChickenLeg, FaFish,LuBeef,MdOutlineEgg,GiCoffeeBeans];
+  const imagens = [FaAppleWhole, GiChickenLeg, FaFish, LuBeef, MdOutlineEgg, GiCoffeeBeans];
   const [imagemIndex, setImagemIndex] = useState(0);
   useEffect(() => {
     const intervalo = setInterval(() => {
@@ -22,15 +22,15 @@ function App() {
     }, 5000);
 
     return () => clearInterval(intervalo)
-  }) 
-
+  })
   //---
 
 
 
-  //Variável responsavel por manipular a tela Add alimento
+  //Variável responsavel por manipular elementos da tela
   const [visivel, setVisivel] = useState(false);
-  const [infos, setInfos] = useState(false);
+  const [infos, setInfos] = useState(false)
+  const [botao, setBotao] = useState("Confirmar")
   //---
 
   //Variáveis para exibição
@@ -49,8 +49,12 @@ function App() {
   const buscaAlimento = (event) => {
     event.preventDefault();
 
+
     if (!alimento.trim()) {
-      alert("Por favor, preencha todos os campos antes de adicionar.");
+      setAlimento("Não encontrado")
+      setTimeout(() => {
+        setAlimento("")
+      }, 3000)
       return;
     }
 
@@ -59,14 +63,25 @@ function App() {
     });
 
     if (filtrado.length == 0) {
-      console.log("Alimento não encontrado");
+      setAlimento("Não encontrado")
+
+      setTimeout(() => {
+        setAlimento("")
+      }, 3000)
+
       return;
     } else {
       {
         setListaAlimento((prevLista) => [...prevLista, ...filtrado]);
+        setBotao("FaCheck")
 
       }
     }
+
+    setTimeout(() => {
+      setBotao("Confirmar");
+      setAlimento("dsad")
+    }, 3000)
 
   }
 
@@ -85,10 +100,9 @@ function App() {
 
   return (
     <div className='app'>
-      
 
       <main style={{ filter: visivel ? "blur(6px)" : "none" }} >
-        <h1 style={{ marginBottom: infos ? "100" : "40px" }}>Customize Your Dish</h1>
+        <h1 style={{ marginBottom: infos ? "100" : "40px" }}>Monte seu prato</h1>
         <section style={{ marginTop: infos ? "0px" : "30px" }} className='painelInformaçoesMacros'>
 
 
@@ -131,12 +145,13 @@ function App() {
         </ul>
 
         <button onClick={() => setVisivel(true)} className='botaoAdd'>
-          ADD
+          Adicionar
         </button>
 
       </main>
 
       <section style={{ display: visivel ? "block" : "none" }} className='painelOpcoes'>
+
         <div>
           <label htmlFor="campoFood">Comida</label>
           <input
@@ -148,7 +163,7 @@ function App() {
         </div>
 
         <div>
-          <label htmlFor="campoVolume">medida</label>
+          <label htmlFor="campoVolume">Medida</label>
           <input
             type="text"
             name=""
@@ -167,7 +182,15 @@ function App() {
 
 
 
-        <button onClick={buscaAlimento} className='botaoAdicionar'>Confirm</button>
+        <button
+          onClick={buscaAlimento}
+          style={{
+            backgroundImage:
+              botao === "Confirmar"
+                ? "linear-gradient(to bottom, #F60112, #90010B 62%)"
+                : "linear-gradient(to bottom, rgb(119, 246, 1), rgb(78, 153, 9) 62%)",
+
+          }} className='botaoAdicionar'>{botao === "Confirmar" ? "Confirmar" : <FaCheck className='iconCheck' />}</button>
 
         <MdClose onClick={() => { setVisivel(false); setInfos(true) }} className='iconsClose' />
 
